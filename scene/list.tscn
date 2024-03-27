@@ -1,0 +1,123 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsho0qnnsydva"]
+
+[ext_resource type="Script" path="res://script/Input.gd" id="1_pewdr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2gtyx"]
+font_size = 70
+
+[node name="Node" type="Node"]
+
+[node name="Input" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_pewdr")
+
+[node name="start" type="ColorRect" parent="Input"]
+layout_mode = 0
+offset_right = 1146.0
+offset_bottom = 646.0
+color = Color(0.211765, 0.211765, 0.211765, 1)
+
+[node name="Label" type="Label" parent="Input/start"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 108.0
+offset_right = 881.0
+offset_bottom = 204.0
+text = "Artillery Game"
+label_settings = SubResource("LabelSettings_2gtyx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="Input/start"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 23.0
+offset_right = 86.0
+offset_bottom = 54.0
+text = "뒤로가기"
+
+[node name="Level1" type="Button" parent="Input/start"]
+layout_mode = 0
+offset_left = 266.0
+offset_top = 271.0
+offset_right = 341.0
+offset_bottom = 346.0
+text = "1"
+
+[node name="Level2" type="Button" parent="Input/start"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 270.0
+offset_right = 475.0
+offset_bottom = 345.0
+text = "2"
+
+[node name="Level3" type="Button" parent="Input/start"]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 271.0
+offset_right = 611.0
+offset_bottom = 346.0
+text = "3"
+
+[node name="Level4" type="Button" parent="Input/start"]
+layout_mode = 0
+offset_left = 675.0
+offset_top = 270.0
+offset_right = 750.0
+offset_bottom = 345.0
+text = "4"
+
+[node name="Level5" type="Button" parent="Input/start"]
+layout_mode = 0
+offset_left = 815.0
+offset_top = 270.0
+offset_right = 890.0
+offset_bottom = 345.0
+text = "5"
+
+[node name="Level6" type="Button" parent="Input/start"]
+layout_mode = 0
+offset_left = 266.0
+offset_top = 408.0
+offset_right = 341.0
+offset_bottom = 483.0
+text = "6"
+
+[node name="Level7" type="Button" parent="Input/start"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 407.0
+offset_right = 475.0
+offset_bottom = 482.0
+text = "7"
+
+[node name="Level8" type="Button" parent="Input/start"]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 408.0
+offset_right = 611.0
+offset_bottom = 483.0
+text = "8"
+
+[node name="Level9" type="Button" parent="Input/start"]
+layout_mode = 0
+offset_left = 675.0
+offset_top = 407.0
+offset_right = 750.0
+offset_bottom = 482.0
+text = "9"
+
+[node name="Level10" type="Button" parent="Input/start"]
+layout_mode = 0
+offset_left = 815.0
+offset_top = 407.0
+offset_right = 890.0
+offset_bottom = 482.0
+text = "10"
+
+[connection signal="pressed" from="Input/start/BackButton" to="Input" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Input/start/Level1" to="Input" method="_on_level_1_pressed"]

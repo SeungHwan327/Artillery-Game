@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://6oke0j84vfpq"]
+
+[ext_resource type="Script" path="res://script/Bomb.gd" id="1_nlfsc"]
+[ext_resource type="Texture2D" uid="uid://bamxwk8b3h6hd" path="res://images/bomb.png" id="2_eifwy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a040r"]
+radius = 29.0172
+
+[node name="RigidBody2D" type="RigidBody2D"]
+script = ExtResource("1_nlfsc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 2)
+shape = SubResource("CircleShape2D_a040r")
+
+[node name="Bomb" type="Sprite2D" parent="."]
+position = Vector2(9, -2)
+rotation = -0.751191
+scale = Vector2(0.173235, 0.173235)
+texture = ExtResource("2_eifwy")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(4, 1)
+scale = Vector2(1.9875, 2.15118)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

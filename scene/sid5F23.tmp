@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://bl12x6qpy4iop"]
+
+[ext_resource type="Script" path="res://script/sideViewLow.gd" id="1_gn8oc"]
+[ext_resource type="Texture2D" uid="uid://b4e375ugc7n2" path="res://sling_shot/Slingshot.png" id="2_cvhdj"]
+[ext_resource type="Texture2D" uid="uid://j6pp8gu41vjs" path="res://sling_shot/SlingshotTop.png" id="3_c1j47"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_icqsq"]
+radius = 71.0634
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_gn8oc")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1018.0
+offset_top = 14.0
+offset_right = 1138.0
+offset_bottom = 69.0
+text = "처음으로"
+
+[node name="SlingShot" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="SlingShot"]
+position = Vector2(118, 556)
+scale = Vector2(0.561069, 0.561069)
+texture = ExtResource("2_cvhdj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="SlingShot"]
+position = Vector2(117.813, 556)
+scale = Vector2(0.567748, 0.561377)
+texture = ExtResource("3_c1j47")
+
+[node name="LeftLine" type="Line2D" parent="SlingShot"]
+points = PackedVector2Array(119, 505, 136, 505)
+default_color = Color(0, 0, 0, 1)
+
+[node name="RightLine" type="Line2D" parent="SlingShot"]
+position = Vector2(0, 3)
+points = PackedVector2Array(101, 502, 120, 502)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Area2D" type="Area2D" parent="SlingShot"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlingShot/Area2D"]
+position = Vector2(119, 505)
+shape = SubResource("CircleShape2D_icqsq")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Marker2D" type="Marker2D" parent="SlingShot"]
+position = Vector2(119, 505)
+
+[node name="ShotArc" type="Line2D" parent="SlingShot"]
+points = PackedVector2Array(121, 645)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="input_event" from="SlingShot/Area2D" to="." method="_on_area_2d_input_event"]

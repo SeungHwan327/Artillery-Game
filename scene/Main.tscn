@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cc1bepubeupj7"]
+[gd_scene load_steps=4 format=3 uid="uid://cc1bepubeupj7"]
 
 [ext_resource type="Texture2D" uid="uid://cgsk1sxdma46b" path="res://images/Cannon.png" id="1_8nx7g"]
 [ext_resource type="Script" path="res://script/Main.gd" id="1_oxblr"]
-[ext_resource type="Texture2D" uid="uid://butftonksrp88" path="res://images/Coordinate.png" id="2_ylo5u"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hiidf"]
 font_size = 70
@@ -39,17 +38,12 @@ offset_left = 657.0
 offset_top = 285.0
 offset_right = 944.0
 offset_bottom = 372.0
-text = "좌표 입력"
+text = "게임 시작"
 
 [node name="Cannon" type="Sprite2D" parent="ColorRect"]
-position = Vector2(338, 506)
+position = Vector2(557, 477)
 scale = Vector2(0.428, 0.428)
 texture = ExtResource("1_8nx7g")
-
-[node name="Coordinate" type="Sprite2D" parent="ColorRect"]
-position = Vector2(798, 495)
-scale = Vector2(0.344, 0.344)
-texture = ExtResource("2_ylo5u")
 
 [connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ColorRect/Button2" to="." method="_on_button_2_pressed"]

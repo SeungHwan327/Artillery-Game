@@ -34,9 +34,56 @@ offset_right = 430.0
 offset_bottom = 217.0
 text = "1.  Artillery "
 label_settings = SubResource("LabelSettings_m1nsx")
-horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ColorRect/Label2"]
+layout_mode = 0
+offset_left = 430.0
+offset_right = 857.0
+offset_bottom = 64.0
+text = "자세히 보기"
+
+[node name="Label5" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 493.0
+offset_right = 431.0
+offset_bottom = 548.0
+text = "4. Air Assault"
+label_settings = SubResource("LabelSettings_m1nsx")
+
+[node name="Button" type="Button" parent="ColorRect/Label5"]
+layout_mode = 0
+offset_left = 430.0
+offset_right = 857.0
+offset_bottom = 64.0
+text = "자세히 보기"
+
+[node name="Label4" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 382.0
+offset_right = 429.0
+offset_bottom = 437.0
+text = "3. CAS"
+label_settings = SubResource("LabelSettings_m1nsx")
+
+[node name="Button" type="Button" parent="ColorRect/Label4"]
+layout_mode = 0
+offset_left = 430.0
+offset_right = 857.0
+offset_bottom = 64.0
+text = "자세히 보기"
+
+[node name="Label3" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 271.0
+offset_right = 430.0
+offset_bottom = 326.0
+text = "2. TOT"
+label_settings = SubResource("LabelSettings_m1nsx")
+
+[node name="Button" type="Button" parent="ColorRect/Label3"]
 layout_mode = 0
 offset_left = 430.0
 offset_right = 857.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://butftonksrp88"
-path="res://.godot/imported/Coordinate.png-db86d84d795e93b4076284ef568c4201.ctex"
+uid="uid://csln4ehtlb10b"
+path="res://.godot/imported/block.png-34e81bb3c8a1f514df254e4e75bcfa3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Coordinate.png"
-dest_files=["res://.godot/imported/Coordinate.png-db86d84d795e93b4076284ef568c4201.ctex"]
+source_file="res://images/block.png"
+dest_files=["res://.godot/imported/block.png-34e81bb3c8a1f514df254e4e75bcfa3d.ctex"]
 
 [params]
 
