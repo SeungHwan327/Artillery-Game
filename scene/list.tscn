@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://bsho0qnnsydva"]
 
-[ext_resource type="Script" path="res://script/Input.gd" id="1_pewdr"]
+[ext_resource type="Script" path="res://script/Total_Level.gd" id="1_pewdr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2gtyx"]
 font_size = 70
 
-[node name="Node" type="Node"]
+[node name="Level" type="Node"]
 
 [node name="Input" type="Control" parent="."]
 layout_mode = 3
@@ -41,83 +41,47 @@ text = "뒤로가기"
 
 [node name="Level1" type="Button" parent="Input/start"]
 layout_mode = 0
-offset_left = 266.0
-offset_top = 271.0
-offset_right = 341.0
-offset_bottom = 346.0
+offset_left = 261.0
+offset_top = 338.0
+offset_right = 336.0
+offset_bottom = 413.0
 text = "1"
 
 [node name="Level2" type="Button" parent="Input/start"]
 layout_mode = 0
-offset_left = 400.0
-offset_top = 270.0
-offset_right = 475.0
-offset_bottom = 345.0
+offset_left = 395.0
+offset_top = 337.0
+offset_right = 470.0
+offset_bottom = 412.0
 text = "2"
 
 [node name="Level3" type="Button" parent="Input/start"]
 layout_mode = 0
-offset_left = 536.0
-offset_top = 271.0
-offset_right = 611.0
-offset_bottom = 346.0
+offset_left = 531.0
+offset_top = 338.0
+offset_right = 606.0
+offset_bottom = 413.0
 text = "3"
 
 [node name="Level4" type="Button" parent="Input/start"]
 layout_mode = 0
-offset_left = 675.0
-offset_top = 270.0
-offset_right = 750.0
-offset_bottom = 345.0
+offset_left = 670.0
+offset_top = 337.0
+offset_right = 745.0
+offset_bottom = 412.0
 text = "4"
 
 [node name="Level5" type="Button" parent="Input/start"]
 layout_mode = 0
-offset_left = 815.0
-offset_top = 270.0
-offset_right = 890.0
-offset_bottom = 345.0
+offset_left = 810.0
+offset_top = 337.0
+offset_right = 885.0
+offset_bottom = 412.0
 text = "5"
-
-[node name="Level6" type="Button" parent="Input/start"]
-layout_mode = 0
-offset_left = 266.0
-offset_top = 408.0
-offset_right = 341.0
-offset_bottom = 483.0
-text = "6"
-
-[node name="Level7" type="Button" parent="Input/start"]
-layout_mode = 0
-offset_left = 400.0
-offset_top = 407.0
-offset_right = 475.0
-offset_bottom = 482.0
-text = "7"
-
-[node name="Level8" type="Button" parent="Input/start"]
-layout_mode = 0
-offset_left = 536.0
-offset_top = 408.0
-offset_right = 611.0
-offset_bottom = 483.0
-text = "8"
-
-[node name="Level9" type="Button" parent="Input/start"]
-layout_mode = 0
-offset_left = 675.0
-offset_top = 407.0
-offset_right = 750.0
-offset_bottom = 482.0
-text = "9"
-
-[node name="Level10" type="Button" parent="Input/start"]
-layout_mode = 0
-offset_left = 815.0
-offset_top = 407.0
-offset_right = 890.0
-offset_bottom = 482.0
-text = "10"
 
 [connection signal="pressed" from="Input/start/BackButton" to="Input" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Input/start/Level1" to="Input" method="_on_level_1_pressed"]
+[connection signal="pressed" from="Input/start/Level2" to="Input" method="_on_level_2_pressed"]
+[connection signal="pressed" from="Input/start/Level3" to="Input" method="_on_level_3_pressed"]
+[connection signal="pressed" from="Input/start/Level4" to="Input" method="_on_level_4_pressed"]
+[connection signal="pressed" from="Input/start/Level5" to="Input" method="_on_level_5_pressed"]

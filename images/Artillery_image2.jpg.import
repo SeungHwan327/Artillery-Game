@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcxiuwke6nuue"
-path="res://.godot/imported/Explosion.png-ed12540bb556e838f1ffda67c896bbde.ctex"
+uid="uid://bwfem5foqim2u"
+path="res://.godot/imported/Artillery_image2.jpg-db1b753c79a7cadd0287f29c89118ca4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Explosion.png"
-dest_files=["res://.godot/imported/Explosion.png-ed12540bb556e838f1ffda67c896bbde.ctex"]
+source_file="res://images/Artillery_image2.jpg"
+dest_files=["res://.godot/imported/Artillery_image2.jpg-db1b753c79a7cadd0287f29c89118ca4.ctex"]
 
 [params]
 

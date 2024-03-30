@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://cldrbd66tly22"]
+
+[ext_resource type="Script" path="res://script/artillery.gd" id="1_5yypm"]
+[ext_resource type="Texture2D" uid="uid://cpvejlfr85g7d" path="res://images/Artillery_image.jpg" id="2_4p2rm"]
+[ext_resource type="Texture2D" uid="uid://bwfem5foqim2u" path="res://images/Artillery_image2.jpg" id="3_osixa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_84hgl"]
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_boky6"]
+font_size = 30
+
+[node name="Artillery" type="Node2D"]
+script = ExtResource("1_5yypm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1153.0
+offset_bottom = 651.0
+color = Color(0.211765, 0.211765, 0.211765, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 17.0
+offset_right = 803.0
+offset_bottom = 116.0
+text = "Artillery 란?"
+label_settings = SubResource("LabelSettings_84hgl")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 139.0
+offset_right = 830.0
+offset_bottom = 465.0
+text = "Artillery are ranged weapons that launch munitions 
+far beyond the range and power of infantry firearms. 
+Early artillery development focused on the ability to 
+breach defensive walls and fortifications during sieges, 
+and led to heavy, fairly immobile siege engines. 
+As technology improved, lighter, more mobile field 
+artillery cannons developed for battlefield use. 
+"
+label_settings = SubResource("LabelSettings_boky6")
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 23.0
+offset_right = 86.0
+offset_bottom = 54.0
+text = "뒤로가기"
+
+[node name="ArtilleryImage" type="Sprite2D" parent="."]
+position = Vector2(985.85, 238.75)
+scale = Vector2(0.46831, 0.46831)
+texture = ExtResource("2_4p2rm")
+
+[node name="ArtilleryImage2" type="Sprite2D" parent="."]
+position = Vector2(988, 475)
+scale = Vector2(0.81, 0.81)
+texture = ExtResource("3_osixa")
+
+[connection signal="pressed" from="ColorRect/BackButton" to="." method="_on_back_button_pressed"]

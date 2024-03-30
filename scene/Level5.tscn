@@ -1,0 +1,250 @@
+[gd_scene load_steps=11 format=3 uid="uid://bf51ng0yvrux2"]
+
+[ext_resource type="Script" path="res://script/Level5.gd" id="1_4v2cs"]
+[ext_resource type="Texture2D" uid="uid://cgsk1sxdma46b" path="res://images/Cannon.png" id="1_xf3mc"]
+[ext_resource type="Script" path="res://script/AnimatableBody2D.gd" id="2_frtko"]
+[ext_resource type="Texture2D" uid="uid://bamxwk8b3h6hd" path="res://images/bomb.png" id="3_npcjx"]
+[ext_resource type="PackedScene" uid="uid://b8gmruy8jxbu6" path="res://scene/grass.tscn" id="4_28pil"]
+[ext_resource type="PackedScene" uid="uid://r2dtklsoo104" path="res://scene/Block.tscn" id="5_xf7y3"]
+[ext_resource type="PackedScene" uid="uid://dkhjxttdmtdyh" path="res://scene/Monster.tscn" id="6_d4n1y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g0ecq"]
+radius = 22.0907
+
+[sub_resource type="Animation" id="Animation_p74jf"]
+resource_name = "pung"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(3000, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_srthg"]
+_data = {
+"pung": SubResource("Animation_p74jf")
+}
+
+[node name="Level5" type="Node2D"]
+script = ExtResource("1_4v2cs")
+
+[node name="First" type="Button" parent="."]
+offset_left = 1055.0
+offset_top = 23.0
+offset_right = 1127.0
+offset_bottom = 54.0
+text = "처음으로"
+
+[node name="Shoot" type="Button" parent="."]
+offset_left = 493.0
+offset_top = 10.0
+offset_right = 633.0
+offset_bottom = 70.0
+text = "발사!!!"
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 21.0
+offset_top = 23.0
+offset_right = 93.0
+offset_bottom = 54.0
+text = "뒤로가기"
+
+[node name="Cannon" type="Sprite2D" parent="."]
+position = Vector2(55, 463)
+rotation = -0.487461
+scale = Vector2(0.436503, 0.437588)
+texture = ExtResource("1_xf3mc")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Cannon"]
+rotation = 0.487461
+scale = Vector2(2.30415, 2.30415)
+script = ExtResource("2_frtko")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cannon/AnimatableBody2D"]
+position = Vector2(69.5821, -20.9106)
+rotation = -0.145191
+shape = SubResource("CircleShape2D_g0ecq")
+
+[node name="Bomb" type="Sprite2D" parent="Cannon/AnimatableBody2D/CollisionShape2D"]
+position = Vector2(-2.32458e-06, 1.26362e-05)
+rotation = -1.17729
+scale = Vector2(0.114804, 0.121943)
+texture = ExtResource("3_npcjx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cannon/AnimatableBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_srthg")
+}
+
+[node name="Grass" type="Node" parent="."]
+
+[node name="StaticBody2D" parent="Grass" instance=ExtResource("4_28pil")]
+show_behind_parent = true
+position = Vector2(436, 647)
+
+[node name="Blocks" type="Node" parent="."]
+
+[node name="block" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(565, 253)
+mass = 5.0
+
+[node name="block2" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(565, 465)
+mass = 5.0
+
+[node name="block3" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(1035, 253)
+mass = 5.0
+
+[node name="block4" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(694, 401)
+rotation = -1.5708
+mass = 5.0
+
+[node name="block5" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(1035, 465)
+mass = 5.0
+
+[node name="block6" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(795, 253)
+mass = 5.0
+
+[node name="block7" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(795, 465)
+mass = 5.0
+
+[node name="block8" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(653, 465)
+mass = 5.0
+
+[node name="block9" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(887, 465)
+mass = 5.0
+
+[node name="block10" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(590, 465)
+mass = 5.0
+
+[node name="block11" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(565, 358)
+mass = 5.0
+
+[node name="block12" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(590, 358)
+mass = 5.0
+
+[node name="block13" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(590, 253)
+mass = 5.0
+
+[node name="block14" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(1060, 253)
+mass = 5.0
+
+[node name="block15" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(1035, 358)
+mass = 5.0
+
+[node name="block16" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(1060, 358)
+mass = 5.0
+
+[node name="block17" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(1060, 465)
+mass = 5.0
+
+[node name="block18" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(820, 253)
+mass = 5.0
+
+[node name="block19" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(795, 358)
+mass = 5.0
+
+[node name="block20" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(820, 358)
+mass = 5.0
+
+[node name="block21" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(820, 465)
+mass = 5.0
+
+[node name="block22" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(736, 465)
+mass = 5.0
+
+[node name="block23" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(970, 465)
+mass = 5.0
+
+[node name="block24" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(928, 402)
+rotation = -1.5708
+mass = 5.0
+
+[node name="block25" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(653, 338)
+mass = 5.0
+
+[node name="block26" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(736, 337)
+mass = 5.0
+
+[node name="block27" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(887, 338)
+mass = 5.0
+
+[node name="block28" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(970, 338)
+mass = 5.0
+
+[node name="block29" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(694, 274)
+rotation = -1.5708
+mass = 5.0
+
+[node name="block30" parent="Blocks" instance=ExtResource("5_xf7y3")]
+position = Vector2(929, 275)
+rotation = -1.5708
+mass = 5.0
+
+[node name="Monsters" type="Node" parent="."]
+
+[node name="moster" parent="Monsters" instance=ExtResource("6_d4n1y")]
+position = Vector2(695, 358)
+script = null
+
+[node name="moster2" parent="Monsters" instance=ExtResource("6_d4n1y")]
+position = Vector2(579, 169)
+script = null
+
+[node name="moster3" parent="Monsters" instance=ExtResource("6_d4n1y")]
+position = Vector2(931, 359)
+script = null
+
+[node name="moster4" parent="Monsters" instance=ExtResource("6_d4n1y")]
+position = Vector2(810, 169)
+script = null
+
+[node name="moster5" parent="Monsters" instance=ExtResource("6_d4n1y")]
+position = Vector2(1049, 169)
+script = null
+
+[node name="moster6" parent="Monsters" instance=ExtResource("6_d4n1y")]
+position = Vector2(931, 486)
+script = null
+
+[node name="moster7" parent="Monsters" instance=ExtResource("6_d4n1y")]
+position = Vector2(695, 486)
+script = null
+
+[connection signal="pressed" from="First" to="." method="_on_first_pressed"]
+[connection signal="pressed" from="Shoot" to="Cannon/AnimatableBody2D" method="_on_shoot_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

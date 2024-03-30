@@ -26,7 +26,7 @@ text = "Artillery Game "
 label_settings = SubResource("LabelSettings_td07i")
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="ColorRect"]
+[node name="Artillery" type="Label" parent="ColorRect"]
 layout_mode = 0
 offset_left = 169.0
 offset_top = 162.0
@@ -35,46 +35,14 @@ offset_bottom = 217.0
 text = "1.  Artillery "
 label_settings = SubResource("LabelSettings_m1nsx")
 
-[node name="Button" type="Button" parent="ColorRect/Label2"]
+[node name="Button" type="Button" parent="ColorRect/Artillery"]
 layout_mode = 0
 offset_left = 430.0
 offset_right = 857.0
 offset_bottom = 64.0
 text = "자세히 보기"
 
-[node name="Label5" type="Label" parent="ColorRect"]
-layout_mode = 0
-offset_left = 170.0
-offset_top = 493.0
-offset_right = 431.0
-offset_bottom = 548.0
-text = "4. Air Assault"
-label_settings = SubResource("LabelSettings_m1nsx")
-
-[node name="Button" type="Button" parent="ColorRect/Label5"]
-layout_mode = 0
-offset_left = 430.0
-offset_right = 857.0
-offset_bottom = 64.0
-text = "자세히 보기"
-
-[node name="Label4" type="Label" parent="ColorRect"]
-layout_mode = 0
-offset_left = 168.0
-offset_top = 382.0
-offset_right = 429.0
-offset_bottom = 437.0
-text = "3. CAS"
-label_settings = SubResource("LabelSettings_m1nsx")
-
-[node name="Button" type="Button" parent="ColorRect/Label4"]
-layout_mode = 0
-offset_left = 430.0
-offset_right = 857.0
-offset_bottom = 64.0
-text = "자세히 보기"
-
-[node name="Label3" type="Label" parent="ColorRect"]
+[node name="TOT" type="Label" parent="ColorRect"]
 layout_mode = 0
 offset_left = 169.0
 offset_top = 271.0
@@ -83,7 +51,7 @@ offset_bottom = 326.0
 text = "2. TOT"
 label_settings = SubResource("LabelSettings_m1nsx")
 
-[node name="Button" type="Button" parent="ColorRect/Label3"]
+[node name="Button2" type="Button" parent="ColorRect/TOT"]
 layout_mode = 0
 offset_left = 430.0
 offset_right = 857.0
@@ -98,4 +66,6 @@ offset_right = 86.0
 offset_bottom = 54.0
 text = "뒤로가기"
 
+[connection signal="pressed" from="ColorRect/Artillery/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ColorRect/TOT/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="ColorRect/BackButton" to="." method="_on_back_button_pressed"]

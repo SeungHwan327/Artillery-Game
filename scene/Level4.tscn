@@ -1,0 +1,208 @@
+[gd_scene load_steps=11 format=3 uid="uid://hyh8ismxnt8a"]
+
+[ext_resource type="Script" path="res://script/Level4.gd" id="1_wvba4"]
+[ext_resource type="Texture2D" uid="uid://cgsk1sxdma46b" path="res://images/Cannon.png" id="2_3txe0"]
+[ext_resource type="Script" path="res://script/AnimatableBody2D.gd" id="3_bca2o"]
+[ext_resource type="Texture2D" uid="uid://bamxwk8b3h6hd" path="res://images/bomb.png" id="4_p54kd"]
+[ext_resource type="PackedScene" uid="uid://b8gmruy8jxbu6" path="res://scene/grass.tscn" id="5_rbc63"]
+[ext_resource type="PackedScene" uid="uid://r2dtklsoo104" path="res://scene/Block.tscn" id="6_htkme"]
+[ext_resource type="PackedScene" uid="uid://dkhjxttdmtdyh" path="res://scene/Monster.tscn" id="7_en2pu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kj4bm"]
+radius = 22.0907
+
+[sub_resource type="Animation" id="Animation_p74jf"]
+resource_name = "pung"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(3000, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_srthg"]
+_data = {
+"pung": SubResource("Animation_p74jf")
+}
+
+[node name="Level4" type="Node2D"]
+script = ExtResource("1_wvba4")
+
+[node name="Next" type="Button" parent="."]
+offset_left = 1055.0
+offset_top = 23.0
+offset_right = 1127.0
+offset_bottom = 54.0
+text = "다음단계"
+
+[node name="Shoot" type="Button" parent="."]
+offset_left = 493.0
+offset_top = 10.0
+offset_right = 633.0
+offset_bottom = 70.0
+text = "발사!!!"
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 21.0
+offset_top = 23.0
+offset_right = 93.0
+offset_bottom = 54.0
+text = "뒤로가기"
+
+[node name="Cannon" type="Sprite2D" parent="."]
+position = Vector2(55, 463)
+rotation = -0.487461
+scale = Vector2(0.436503, 0.437588)
+texture = ExtResource("2_3txe0")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Cannon"]
+rotation = 0.487461
+scale = Vector2(2.30415, 2.30415)
+script = ExtResource("3_bca2o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cannon/AnimatableBody2D"]
+position = Vector2(69.5821, -20.9106)
+rotation = -0.145191
+shape = SubResource("CircleShape2D_kj4bm")
+
+[node name="Bomb" type="Sprite2D" parent="Cannon/AnimatableBody2D/CollisionShape2D"]
+position = Vector2(-2.32458e-06, 1.26362e-05)
+rotation = -1.17729
+scale = Vector2(0.114804, 0.121943)
+texture = ExtResource("4_p54kd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cannon/AnimatableBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_srthg")
+}
+
+[node name="Grass" type="Node" parent="."]
+
+[node name="StaticBody2D" parent="Grass" instance=ExtResource("5_rbc63")]
+show_behind_parent = true
+position = Vector2(436, 647)
+
+[node name="Blocks" type="Node" parent="."]
+
+[node name="block" parent="Blocks" instance=ExtResource("6_htkme")]
+position = Vector2(626, 465)
+rotation = -3.14159
+mass = 5.0
+
+[node name="block2" parent="Blocks" instance=ExtResource("6_htkme")]
+position = Vector2(729, 466)
+rotation = -3.14159
+mass = 5.0
+
+[node name="block3" parent="Blocks" instance=ExtResource("6_htkme")]
+position = Vector2(675, 339)
+rotation = -3.14159
+mass = 5.0
+
+[node name="block4" parent="Blocks" instance=ExtResource("6_htkme")]
+position = Vector2(786, 340)
+rotation = -3.14159
+mass = 5.0
+
+[node name="block5" parent="Blocks" instance=ExtResource("6_htkme")]
+position = Vector2(730, 212)
+rotation = -3.14159
+mass = 5.0
+
+[node name="block6" parent="Blocks" instance=ExtResource("6_htkme")]
+position = Vector2(843, 211)
+rotation = -3.14159
+mass = 5.0
+
+[node name="block7" parent="Blocks" instance=ExtResource("6_htkme")]
+position = Vector2(785, 83)
+rotation = -3.14159
+mass = 5.0
+
+[node name="block8" parent="Blocks" instance=ExtResource("6_htkme")]
+position = Vector2(893, 339)
+rotation = -3.14159
+mass = 5.0
+
+[node name="block9" parent="Blocks" instance=ExtResource("6_htkme")]
+position = Vector2(675, 402)
+rotation = -1.5708
+mass = 5.0
+
+[node name="block10" parent="Blocks" instance=ExtResource("6_htkme")]
+position = Vector2(837, 466)
+rotation = -3.14159
+mass = 5.0
+
+[node name="block11" parent="Blocks" instance=ExtResource("6_htkme")]
+position = Vector2(943, 466)
+rotation = -3.14159
+mass = 5.0
+
+[node name="block12" parent="Blocks" instance=ExtResource("6_htkme")]
+position = Vector2(783, 403)
+rotation = -1.5708
+mass = 5.0
+
+[node name="block13" parent="Blocks" instance=ExtResource("6_htkme")]
+position = Vector2(892, 402)
+rotation = -1.5708
+mass = 5.0
+
+[node name="block14" parent="Blocks" instance=ExtResource("6_htkme")]
+position = Vector2(730, 276)
+rotation = -1.5708
+mass = 5.0
+
+[node name="block15" parent="Blocks" instance=ExtResource("6_htkme")]
+position = Vector2(785, 147)
+rotation = -1.5708
+mass = 5.0
+
+[node name="block16" parent="Blocks" instance=ExtResource("6_htkme")]
+position = Vector2(839, 275)
+rotation = -1.5708
+mass = 5.0
+
+[node name="Monsters" type="Node" parent="."]
+
+[node name="moster1" parent="Monsters" instance=ExtResource("7_en2pu")]
+position = Vector2(786, 231)
+rotation = -0.0161323
+script = null
+
+[node name="moster2" parent="Monsters" instance=ExtResource("7_en2pu")]
+position = Vector2(729, 358)
+rotation = -0.0161323
+script = null
+
+[node name="moster3" parent="Monsters" instance=ExtResource("7_en2pu")]
+position = Vector2(841, 358)
+rotation = -0.0161323
+script = null
+
+[node name="moster4" parent="Monsters" instance=ExtResource("7_en2pu")]
+position = Vector2(896, 484)
+rotation = -0.0161323
+script = null
+
+[node name="moster5" parent="Monsters" instance=ExtResource("7_en2pu")]
+position = Vector2(784, 486)
+rotation = -0.0161323
+script = null
+
+[node name="moster6" parent="Monsters" instance=ExtResource("7_en2pu")]
+position = Vector2(681, 485)
+rotation = -0.0161323
+script = null
+
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Shoot" to="Cannon/AnimatableBody2D" method="_on_shoot_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
